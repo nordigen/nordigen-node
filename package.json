@@ -1,0 +1,42 @@
+{
+  "name": "nordigen-node",
+  "version": "1.0.0",
+  "description": "Nordigen official API client for Node.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --setupFiles dotenv/config",
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "keywords": [
+    "nordigen",
+    "open banking",
+    "psd2",
+    "api"
+  ],
+  "author": "Nordigen Solutions <support@nordigen.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordigen/nordigen-node.git"
+  },
+  "bugs": "https://github.com/nordigen/nordigen-node/issues",
+  "homepage": "https://github.com/nordigen/nordigen-node",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.13",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx|mjs)$": "babel-jest"
+    }
+  }
+}

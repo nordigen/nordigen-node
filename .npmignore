@@ -1,0 +1,8 @@
+node_modules/
+example/
+tests/
+.env.template
+.env
+.nvmrc
+babel.config.json
+main.js
