@@ -54,6 +54,10 @@ client.setToken(process.env.TOKEN);
 // Get list of institutions
 const institutions = await client.institution.getInstitutions({country: "LV"});
 
+// Institution id can be gathered from getInstitutions response.
+// Example Revolut ID
+const institutionId = "REVOLUT_REVOGB21";
+
 // Initialize new bank session
 const init = await client.initSession({
     redirectUrl: "https://nordigen.com",
@@ -76,10 +80,12 @@ After successful authorization with a bank you can fetch your data (details, bal
 ```javascript
 // Get account id after completed authorization with a bank
 const requisitionData = await client.requisition.getRequisitionById(requisitionId);
+// Get account id from the list
 const accountId = requisitionData.accounts[0];
 
-// Account data
+// Instantiate account object
 const account = client.account(accountId);
+
 // Fetch account metadata
 const metaData = await account.getAccountMetaData();
 // Fetch account balances
