@@ -1,7 +1,7 @@
 import "regenerator-runtime/runtime";
 import { randomUUID } from "crypto"
 import {jest} from "@jest/globals";
-import NordigenClient from "../nordigen";
+import NordigenClient from "../lib";
 
 
 afterEach(() => {
@@ -10,7 +10,7 @@ afterEach(() => {
 
 
 describe("Test Client", () => {
-    
+
     const client = new NordigenClient({
         secretId: process.env.SECRET_ID,
         secretKey: process.env.SECRET_KEY
@@ -18,14 +18,15 @@ describe("Test Client", () => {
 
     const institution = "REVOLUT_REVOGB21";
     const redirectUrl = "https://nordigen.com";
-    
+
     it("Creates access token", async () => {
         const response = await client.generateToken();
         expect(response.access).toBeDefined();
     })
 
     it("Exchange refresh token for access", async () => {
-        const response = await client.exchangeToken({refreshToken: process.env.REFRESH_TOKEN});
+        const token = await client.generateToken();
+        const response = await client.exchangeToken({refreshToken: token.refresh});
         expect(response.access).toBeDefined();
     })
 
@@ -38,7 +39,7 @@ describe("Test Client", () => {
         expect(response.link).toBeDefined();
         expect(response.institution_id).toBeDefined();
     })
-    
+
     it("Get list of institutions", async () => {
         const response = await client.institution.getInstitutions({country: "LV"});
         expect(response).toContainEqual(
@@ -50,7 +51,7 @@ describe("Test Client", () => {
 
     it("Get institution by id", async () => {
         const response = await client.institution.getInstitutionById(institution);
-        expect(response.id).toBe(institution)
+        expect(response.id).toBe(institution);
     })
 
 
@@ -67,12 +68,12 @@ describe("Test Client", () => {
 
         // Delete agreement
         const agreementDelete = await client.agreement.deleteAgreement(agreementId);
-        expect(agreementDelete.detail).toBe(`End User Agreement ${agreementId} deleted`)
+        expect(agreementDelete.detail).toBe(`End User Agreement ${agreementId} deleted`);
     })
 
 
     it("Test requisition api", async () => {
-        const reference = randomUUID(); 
+        const reference = randomUUID();
         const newRequisition = await client.requisition.createRequisition({
             redirectUrl: redirectUrl,
             institutionId: institution,
@@ -89,22 +90,22 @@ describe("Test Client", () => {
 
         // Delete requisition
         const deletedRequisition = await client.requisition.deleteRequisition(requisitionId);
-        expect(deletedRequisition.detail).toBe(`Requisition ${requisitionId} deleted with all its End User Agreements`)
+        expect(deletedRequisition.detail).toBe(`Requisition ${requisitionId} deleted with all its End User Agreements`);
     })
 
     it("Test account data", async () => {
-        
+
         const account = await client.account(process.env.ACCOUNT_ID);
-        
+
         const metaData = await account.getMetadata();
-        expect(metaData.id).toBe(process.env.ACCOUNT_ID)
+        expect(metaData.id).toBe(process.env.ACCOUNT_ID);
 
         const balance = await account.getBalances();
         expect(balance.balances).toBeDefined();
 
         const details = await account.getDetails();
         expect(details.account).toBeDefined();
-        
+
         const transactions = await account.getTransactions();
         expect(transactions.transactions).toBeDefined();
     }, 60000)
