@@ -94,6 +94,8 @@ const balances = await account.getBalances();
 const details = await account.getDetails();
 // Fetch account transactions
 const transactions = await account.getTransactions();
+// Optional. You can filter transactions by specific date range
+await account.getTransactions({dateFrom: "2021-12-01", dateTo: "2022-01-30"});
 ```
 ---
 
