@@ -49,7 +49,7 @@ const refreshToken = tokenData.refresh;
 const newToken = await client.exchangeToken({refreshToken: refreshToken});
 
 // Use existing token
-client.setToken(process.env.TOKEN);
+client.token = process.env.TOKEN;
 
 // Get list of institutions
 const institutions = await client.institution.getInstitutions({country: "LV"});

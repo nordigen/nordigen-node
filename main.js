@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto'
 import dotenv from 'dotenv'
-import NordigenClient from './nordigen/index.js';
+import NordigenClient from './lib/index.js';
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ const refreshToken = tokenData.refresh;
 const newToken = await client.exchangeToken({refreshToken: refreshToken});
 
 // Use existing token
-client.setToken(process.env.TOKEN);
+client.token = process.env.TOKEN;
 
 // Get list of institutions
 const institutions = await client.institution.getInstitutions({country: "LV"});
@@ -34,7 +34,7 @@ const institutionId = "REVOLUT_REVOGB21";
 const init = await client.initSession({
     redirectUrl: "https://nordigen.com",
     institutionId: institutionId,
-    referenceId: randomUUID()
+    referenceId: randomUUID(),
 })
 
 // Get link to authorize in the bank
