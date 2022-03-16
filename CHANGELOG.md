@@ -4,3 +4,10 @@
 
 - Initial release
 
+
+## [1.0.1] - 2022-03-16
+
+- Add TypeScript Type definitions
+- Add date filters for transactions
+- Add agreementId to requisition request
+- Fixed token setter, docs and main.js
