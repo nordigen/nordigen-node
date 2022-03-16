@@ -21,10 +21,12 @@ export default class AccountApi {
      */
     getBalances(): any;
     /**
+     * @param {str} dateFrom
+     * @param {str} dateTo
      * Access account transactions
      * @returns Object with account transactions
      */
-    getTransactions(): any;
+    getTransactions(date: any): any;
     #private;
 }
 //# sourceMappingURL=account.d.ts.map

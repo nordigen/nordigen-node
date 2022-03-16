@@ -1,1 +1,1 @@
-{"version":3,"file":"account.d.ts","sourceRoot":"","sources":["../../lib/api/account.js"],"names":[],"mappings":"AAAA;IAMI;;;;MAIE;IACF,mDAGC;IAYD;;;OAGG;IACH,mBAIC;IAED;;;OAGG;IACH,kBAEC;IAED;;;OAGG;IACH,mBAEC;IAED;;;OAGG;IACH,uBAEC;;CACJ"}
+{"version":3,"file":"account.d.ts","sourceRoot":"","sources":["../../lib/api/account.js"],"names":[],"mappings":"AAAA;IAMI;;;;MAIE;IACF,mDAGC;IAaD;;;OAGG;IACH,mBAIC;IAED;;;OAGG;IACH,kBAEC;IAED;;;OAGG;IACH,mBAEC;IAED;;;;;OAKG;IACH,gCAOC;;CACJ"}

@@ -24,13 +24,12 @@ export default class NordigenClient {
      * Token setter
      * @param {string} token
     */
-    set setToken(arg: string);
-    token: string;
+    set token(arg: string);
     /**
      * Token getter
      * @returns {string} token
     */
-    get getToken(): string;
+    get token(): string;
     /**
      * Construct Account object
      * @param {string} accountId
