@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Nordigen official API client for Node.js",
   "main": "lib/index.js",
-  "types": "types/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --setupFiles dotenv/config",
     "dev": "nodemon index.js",
