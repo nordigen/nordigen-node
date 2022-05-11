@@ -1,10 +1,14 @@
 export default class AccountApi {
     /**
      * Account api class
-     * @param {NordigenClient} client
-     * @param {str} accountId
+     * @param {Object} params
+     * @param {NordigenClient} params.client
+     * @param {string} params.accountId
     */
-    constructor({ client, accountId }: NordigenClient);
+    constructor({ client, accountId }: {
+        client: NordigenClient;
+        accountId: string;
+    });
     /**
      * Access account metadata
      * @returns Account metadata object
@@ -21,12 +25,16 @@ export default class AccountApi {
      */
     getBalances(): any;
     /**
-     * @param {str} dateFrom
-     * @param {str} dateTo
+     * @param {Object} [params]
+     * @param {string} params.dateFrom
+     * @param {string} params.dateTo
      * Access account transactions
      * @returns Object with account transactions
      */
-    getTransactions(date: any): any;
+    getTransactions({ dateFrom, dateTo }?: {
+        dateFrom: string;
+        dateTo: string;
+    }): any;
     #private;
 }
 //# sourceMappingURL=account.d.ts.map

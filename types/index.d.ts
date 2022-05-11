@@ -41,13 +41,13 @@ export default class NordigenClient {
      * @param {Object} params
      * @param {string} params.endpoint API endpoint
      * @param {string} params.parameters for Post or Get request
-     * @param {HttpMethod} params.method HTTP method
+     * @param {HttpMethod} [params.method] HTTP method
      * @returns Request object
     */
     request({ endpoint, parameters, method }: {
         endpoint: string;
         parameters: string;
-        method: HttpMethod;
+        method?: HttpMethod;
     }): Promise<unknown>;
     /**
      * Generate new access token
@@ -69,12 +69,17 @@ export default class NordigenClient {
             * Gets institution id;
             * Creates agreement
             * Creates requisiton
+     * @param {Object} params
+     * @param {string} params.redirectUrl
+     * @param {string} params.institutionId
+     * @param {string} params.referenceId
+     * @param {number} [params.maxHistoricalDays]
      * @returns Requisitions object
     */
     initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays }: {
-        redirectUrl: any;
-        institutionId: any;
-        referenceId: any;
+        redirectUrl: string;
+        institutionId: string;
+        referenceId: string;
         maxHistoricalDays?: number;
     }): Promise<any>;
     #private;
