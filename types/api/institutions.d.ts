@@ -1,15 +1,21 @@
 export default class InstitutionApi {
     /**
-     * Institution api class
-     * @param {NordigenClient} client
+     * Agreements api class
+     * @param {Object} params
+     * @param {NordigenClient} params.client
      */
-    constructor({ client }: NordigenClient);
+    constructor({ client }: {
+        client: NordigenClient;
+    });
     /**
      * Get list of institutions
-     * @param {string} country
+     * @param {Object} params
+     * @param {string} params.country
      * @returns institution data array
      */
-    getInstitutions({ country }: string): any;
+    getInstitutions({ country }: {
+        country: string;
+    }): any;
     /***
      * Get single institution by id
      * @param {string} id
