@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2022-06-16
+
+- Add premium endpoints to accounts API
+- Fix misspelled variable in accounts API
+
+
 ## [1.0.2] - 2022-05-18
 
 - Fix TypeScript Type definitions
