@@ -1,7 +1,7 @@
 node_modules/
 example/
 tests/
-.env.template
+.env.*
 .env
 .nvmrc
 babel.config.json
