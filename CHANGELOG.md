@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.3] - 2022-06-16
+## [1.1.0] - 2022-06-16
 
 - Add premium endpoints to accounts API
 - Fix misspelled variable in accounts API
