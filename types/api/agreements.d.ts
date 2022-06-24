@@ -60,4 +60,5 @@ export default class AgreementApi {
     }): any;
     #private;
 }
+import NordigenClient from "../index.js";
 //# sourceMappingURL=agreements.d.ts.map

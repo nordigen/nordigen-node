@@ -50,4 +50,5 @@ export default class RequisitionsApi {
     deleteRequisition(requisitionId: string): any;
     #private;
 }
+import NordigenClient from "../index.js";
 //# sourceMappingURL=requisition.d.ts.map

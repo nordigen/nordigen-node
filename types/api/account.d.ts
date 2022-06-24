@@ -20,6 +20,11 @@ export default class AccountApi {
      */
     getDetails(): any;
     /**
+     * Access premium account details
+     * @returns Object with premium account details
+     */
+    getPremiumDetails(): any;
+    /**
      * Access account balances
      * @returns Object with account balances
      */
@@ -35,6 +40,18 @@ export default class AccountApi {
         dateFrom: string;
         dateTo: string;
     }): any;
+    /**
+     * @param {Object} [params]
+     * @param {string} params.dateFrom
+     * @param {string} params.dateTo
+     * Access premium account transactions
+     * @returns Object with premium account transactions
+     */
+    getPremiumTransactions({ dateFrom, dateTo }?: {
+        dateFrom: string;
+        dateTo: string;
+    }): any;
     #private;
 }
+import NordigenClient from "../index.js";
 //# sourceMappingURL=account.d.ts.map
