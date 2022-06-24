@@ -24,4 +24,5 @@ export default class InstitutionApi {
     getInstitutionById(id: string): any;
     #private;
 }
+import NordigenClient from "../index.js";
 //# sourceMappingURL=institutions.d.ts.map

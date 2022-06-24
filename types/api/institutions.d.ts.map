@@ -1,1 +1,1 @@
-{"version":3,"file":"institutions.d.ts","sourceRoot":"","sources":["../../lib/api/institutions.js"],"names":[],"mappings":"AACA;IAKI;;;;OAIG;IACH;QAFkC,MAAM;OAIvC;IAED;;;;;OAKG;IACH;QAH0B,OAAO,EAAtB,MAAM;YAOhB;IAED;;;;MAIE;IACF,uBAHW,MAAM,OAKhB;;CAEJ"}
+{"version":3,"file":"institutions.d.ts","sourceRoot":"","sources":["../../lib/api/institutions.js"],"names":[],"mappings":"AAEA;IAKI;;;;OAIG;IACH;QAFkC,MAAM,EAA7B,cAAc;OAIxB;IAED;;;;;OAKG;IACH;QAH0B,OAAO,EAAtB,MAAM;YAOhB;IAED;;;;MAIE;IACF,uBAHW,MAAM,OAKhB;;CAEJ"}
