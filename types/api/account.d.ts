@@ -4,7 +4,7 @@ export default class AccountApi {
      * @param {Object} params
      * @param {NordigenClient} params.client
      * @param {string} params.accountId
-    */
+     */
     constructor({ client, accountId }: {
         client: NordigenClient;
         accountId: string;
@@ -21,9 +21,10 @@ export default class AccountApi {
     getDetails(): any;
     /**
      * Access premium account details
+     * @param {string} country parameter in iso format
      * @returns Object with premium account details
      */
-    getPremiumDetails(): any;
+    getPremiumDetails(country?: string): any;
     /**
      * Access account balances
      * @returns Object with account balances
@@ -33,13 +34,15 @@ export default class AccountApi {
      * @param {Object} [params]
      * @param {string} params.dateFrom
      * @param {string} params.dateTo
+     * @param {string} params.country
      * Access account transactions
      * @returns Object with account transactions
      */
     getTransactions({ dateFrom, dateTo }?: {
         dateFrom: string;
         dateTo: string;
-    }): any;
+        country: string;
+    }, country?: string): any;
     /**
      * @param {Object} [params]
      * @param {string} params.dateFrom
@@ -47,7 +50,7 @@ export default class AccountApi {
      * Access premium account transactions
      * @returns Object with premium account transactions
      */
-    getPremiumTransactions({ dateFrom, dateTo }?: {
+    getPremiumTransactions({ dateFrom, dateTo, country }?: {
         dateFrom: string;
         dateTo: string;
     }): any;

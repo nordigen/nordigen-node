@@ -14,8 +14,8 @@ export default class NordigenClient {
     secretId: string;
     headers: {
         accept: string;
-        "Content-Type": string;
-        "User-Agent": string;
+        'Content-Type': string;
+        'User-Agent': string;
     };
     institution: InstitutionApi;
     agreement: AgreementApi;
@@ -23,12 +23,12 @@ export default class NordigenClient {
     /**
      * Token setter
      * @param {string} token
-    */
+     */
     set token(arg: string);
     /**
      * Token getter
      * @returns {string} token
-    */
+     */
     get token(): string;
     /**
      * Construct Account object
@@ -43,7 +43,7 @@ export default class NordigenClient {
      * @param {string} params.parameters for Post or Get request
      * @param {HttpMethod} [params.method] HTTP method
      * @returns Request object
-    */
+     */
     request({ endpoint, parameters, method }: {
         endpoint: string;
         parameters: string;
@@ -52,31 +52,31 @@ export default class NordigenClient {
     /**
      * Generate new access token
      * @returns Object with token details
-    */
+     */
     generateToken(): Promise<unknown>;
     /**
      * Exchange refresh token for access token
      * @param {Object} params
      * @param {string} params.refreshToken
      * @returns Object with new access token
-    */
+     */
     exchangeToken({ refreshToken }: {
         refreshToken: string;
     }): Promise<unknown>;
     /**
-     * Factory method that creates authorization in a specific institution
-        and are responsible for the following steps:
-            * Gets institution id;
-            * Creates agreement
-            * Creates requisiton
-     * @param {Object} params
-     * @param {string} params.redirectUrl
-     * @param {string} params.institutionId
-     * @param {string} params.referenceId
-     * @param {number} [params.maxHistoricalDays]
-     * @returns Requisitions object
-    */
-    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays }: {
+       * Factory method that creates authorization in a specific institution
+          and are responsible for the following steps:
+              * Gets institution id;
+              * Creates agreement
+              * Creates requisiton
+       * @param {Object} params
+       * @param {string} params.redirectUrl
+       * @param {string} params.institutionId
+       * @param {string} params.referenceId
+       * @param {number} [params.maxHistoricalDays]
+       * @returns Requisitions object
+      */
+    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays, }: {
         redirectUrl: string;
         institutionId: string;
         referenceId: string;
