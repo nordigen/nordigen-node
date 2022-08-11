@@ -9,12 +9,12 @@ Before starting to use API you will need to create a new secret and get your `SE
 
 
 ## Requirements
----
+
 * Node >= 12.0
 
 
 ## Installation
----
+
 Install library via npm:
 
 ```
@@ -28,7 +28,7 @@ yarn add nordigen-node
 Express example application can be found in `example` directory
 
 ## Quickstart
----
+
 
 ```javascript
 // Get secretId and secretKey from ob.nordigen.com portal and pass to NordigenClient or load from .env file
@@ -74,7 +74,6 @@ const requisitionId = init.id;
 
 After successful authorization with a bank you can fetch your data (details, balances, transactions)
 
----
 ## Fetching account metadata, balances, details and transactions
 
 ```javascript
@@ -97,7 +96,21 @@ const transactions = await account.getTransactions();
 // Optional. You can filter transactions by specific date range
 await account.getTransactions({dateFrom: "2021-12-01", dateTo: "2022-01-30"});
 ```
----
+
+## Premium endpoints
+
+In order to access Premium API endpoints, please contact us at [onboarding@nordigen.com](onboarding@nordigen.com)
+
+```js
+// country parameter can be omitted but when used you will get more precise results
+const details = await account.getPremiumDetails('LV');
+// date and country parameters are optional
+const transactions = await account.getPremiumTransactions({
+  dateFrom: '2021-12-01',
+  dateTo: '2022-01-30',
+  country: 'LV',
+});
+```
 
 ## Support
 
