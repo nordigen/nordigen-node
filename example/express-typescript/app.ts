@@ -1,4 +1,5 @@
-import express from "express";
+import { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import session from "express-session";
 import dotenv from "dotenv";
 import hbs from "hbs";
@@ -10,9 +11,15 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+declare module 'express-session' {
+  export interface SessionData {
+    requisition: string;
+  }
+}
+
 app.disable('view cache');
 app.set('view engine', 'hbs');
-hbs.registerHelper('json', (context) => {
+hbs.registerHelper('json', (context: unknown) => {
     return JSON.stringify(context);
 });
 
@@ -28,7 +35,7 @@ app.use(session({
 }));
 
 app.set('etag', false);
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
     res.set('Cache-Control', 'no-store')
     next()
 })
@@ -37,8 +44,8 @@ const COUNTRY = "LV";
 const REDIRECT_URI = "http://localhost:3000/results";
 
 const client = new NordigenClient({
-    secretId: process.env.SECRET_ID,
-    secretKey: process.env.SECRET_KEY
+    secretId: process.env.SECRET_ID!,
+    secretKey: process.env.SECRET_KEY!
 })
 
 // If you have existing token
@@ -47,7 +54,6 @@ const client = new NordigenClient({
 // create new access token
 const data = await client.generateToken();
 
-
 app.get('/', async (req, res) => {
     //Get list of institutions
     const institutions = await client.institution.getInstitutions({country: COUNTRY});
@@ -55,7 +61,7 @@ app.get('/', async (req, res) => {
 })
 
 
-app.get("/agreements/:id", async (req, res) => {
+app.get("/agreements/:id", async (req: Request, res: Response) => {
 
     const institutionId = req.params.id;
 
@@ -80,7 +86,7 @@ app.get("/agreements/:id", async (req, res) => {
     })
 })
 
-app.get("/results/", async (req, res) => {
+app.get("/results/", async (req: Request, res: Response) => {
     const requisitionId = req.session.requisition;
     if(!requisitionId) {
         throw new Error("Requisition ID is not found. Please complete authorization with your bank");
