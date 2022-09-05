@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordigen Express app</title>
+    <link href="https://unpkg.com/nordigen-bank-ui@1.4.0/package/src/selector.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="institution-content-wrapper">
+        <div class="institution-modal-content" id="institution-modal-content">
+            <header class="institution-modal-header">
+                <h2>Select your bank:</h2>
+            </header>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/nordigen-bank-ui@1.4.0/package/src/selector.js"></script>
+    <script>
+        const config = {
+            // Redirect URL that is being used when modal is being closed.
+            redirectUrl: 'https://www.example.com',
+            // Text that will be displayed on the left side under the logo. Text is limited to 100 characters, and rest will be truncated.
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean mavdvd",
+            // Logo URL that will be shown below the modal form.
+            logoUrl: 'https://cdn.nordigen.com/ais/Nordigen_Logo_Black.svg',
+            // Will display country list with corresponding institutions. When `countryFilter` is set to `false`, only list of institutions will be shown.
+            countryFilter: true,
+            // style configs
+            styles: {
+                // Primary
+                // Link to google font
+                fontFamily: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+                fontSize: '15',
+                backgroundColor: '#F2F2F2',
+                textColor: '#222',
+                headingColor: '#222',
+                linkColor: '#8d9090',
+                // Modal
+                modalTextColor: '#1B2021',
+                modalBackgroundColor: '#fff',
+                // Button
+                buttonColor: '#3A53EE',
+                buttonTextColor: '#fff'
+            }
+        };
+
+        const data = {{{data}}};
+        new institutionSelector(data, 'institution-modal-content', config);
+
+        const institutionList = Array.from(document.querySelectorAll(".ob-list-institution a"));
+        const container = document.querySelector(".institution-container");
+
+        const addEventListenerToInstitution  = () => {
+            const institutions = Array.from(document.querySelectorAll('.ob-list-institution > a'));
+            institutions.forEach((institution) => {
+                institution.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const aspspId = e.currentTarget.getAttribute('data-institution');
+                    window.location = `/agreements/${aspspId}`;
+                });
+            });
+        }
+
+        if(institutionList.length > 0) {
+            addEventListenerToInstitution();
+        } else {
+            const conf = {
+                childList: true
+            };
+            const observer = new MutationObserver((event) => {
+                addEventListenerToInstitution();
+            });
+            observer.observe(container, conf);
+        }
+
+    </script>
+</body>
+</html>
