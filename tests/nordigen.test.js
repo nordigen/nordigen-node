@@ -34,7 +34,8 @@ describe("Test Client", () => {
         const response = await client.initSession({
             redirectUrl: "https://nordigen.com",
             institutionId: institution,
-            referenceId: randomUUID()
+            referenceId: randomUUID(),
+            userLanguage: "en"
         })
         expect(response.link).toBeDefined();
         expect(response.institution_id).toBeDefined();
