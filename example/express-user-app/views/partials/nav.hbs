@@ -1,0 +1,38 @@
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <div class='container'>
+        <a class='navbar-brand' href='/'>
+            <img
+                src='https://cdn.nordigen.com/ais/Nordigen_Logo_Black.svg'
+                width='120'
+                height='50'
+                class='d-inline-block align-text-top'
+            />
+        </a>
+        <button
+            class='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarNavAltMarkup'
+            aria-controls='navbarNavAltMarkup'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+        >
+            <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+            <div class='navbar-nav'>
+                {{#if userEmail }}
+                    <a class='nav-item nav-link' href='/my-data'>My Account data</a>
+                    <a class='nav-item nav-link' href='/logout'>Log out</a>
+                {{ else}}
+                    <a class='nav-item nav-link' href='/login'>Login</a>
+                    <a class='nav-item nav-link' href='/signup'>Sign Up</a>
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if userEmail }}
+            <p>Logged in as {{userEmail}}</p>
+        {{/if}}
+    </div>
+</nav>
