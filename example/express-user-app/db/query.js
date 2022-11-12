@@ -4,7 +4,8 @@ const db = knex({
     client: 'sqlite3',
     connection: {
         filename: 'app.sqlite3'
-    }
+    },
+    useNullAsDefault: true
 });
 
 export const getUser = (email, password) => {

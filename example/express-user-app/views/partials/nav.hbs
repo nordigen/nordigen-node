@@ -9,17 +9,17 @@
             />
         </a>
         <button
-            class='navbar-toggler'
-            type='button'
-            data-toggle='collapse'
-            data-target='#navbarNavAltMarkup'
-            aria-controls='navbarNavAltMarkup'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
         >
-            <span class='navbar-toggler-icon'></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <div class='navbar-nav'>
                 {{#if userEmail }}
                     <a class='nav-item nav-link' href='/my-data'>My Account data</a>
@@ -32,7 +32,7 @@
         </div>
 
         {{#if userEmail }}
-            <p>Logged in as {{userEmail}}</p>
+            <p class="fs-1 d-none d-md-block">Logged in as {{userEmail}}</p>
         {{/if}}
     </div>
 </nav>

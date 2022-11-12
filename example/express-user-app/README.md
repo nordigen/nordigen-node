@@ -51,10 +51,11 @@ npm i
 1. Create account with any dummy data.
 2. Connect your bank account. Note: Your data will be stored locally in SQLite database.
 Your account data will be mapped with unique requisitionId and your accountId.
-3. 
 
 ## Additional Notes
 * Access token expires after 24 hours and needs to be refreshed manually by making `POST` request to `https://ob.nordigen.com/api/v2/token/refresh/` and updating it in `users` table. After refresh token expires, user should generate a new token using following endpoint `https://ob.nordigen.com/api/v2/token/new/`.
+
+### Please do not use this application in Production!
 
 ## Learn more about our existing Client libraries
 

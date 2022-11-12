@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { randomUUID } from 'crypto';
 import NordigenClient from 'nordigen-node';
-
+import { escapeHtml } from './utils.js';
 import {
     getUser,
     createUser,
@@ -24,6 +24,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const REDIRECT_URI = `http://localhost:${port}/api/data/`;
+
+if (!process.env.SECRET_ID || !process.env.SECRET_KEY) {
+    throw new Error("SECRET_ID or SECRET_KEY is not provided!");
+}
 
 const client = new NordigenClient({
     secretId: process.env.SECRET_ID,
@@ -71,6 +75,7 @@ app.get('/', async (req, res) => {
         const institutions = await client.institution.getInstitutions({
             country: process.env.COUNTRY
         });
+
         return res.render('index', {
             data: JSON.stringify(institutions),
             userEmail: req.session.userEmail
@@ -90,8 +95,8 @@ app.get('/login', async (req, res) => {
 
 // Login routes
 app.post('/login', async (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const email = escapeHtml(req.body.email);
+    const password = escapeHtml(req.body.password);
     const user = await getUser(email, password);
 
     if (!user) {
@@ -119,7 +124,7 @@ app.get('/signup', async (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
-    const email = req.body.email;
+    const email = escapeHtml(req.body.email);
     const password = req.body.password;
     const user = await getUser(email, password);
 
