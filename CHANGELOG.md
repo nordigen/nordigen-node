@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 2022-11-24
+
+- Fix: add country param to premium transactions API
+
 ## [1.1.0] - 2022-06-16
 
 - Add premium endpoints to accounts API
