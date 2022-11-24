@@ -5,17 +5,17 @@ export default class NordigenClient {
      * @param {string} params.secretId
      * @param {string} params.secretKey
      */
-    constructor({ secretId, secretKey }: {
+    constructor({ secretId, secretKey, baseUrl }: {
         secretId: string;
         secretKey: string;
     });
-    baseUrl: string;
+    baseUrl: any;
     secretKey: string;
     secretId: string;
     headers: {
         accept: string;
-        'Content-Type': string;
-        'User-Agent': string;
+        "Content-Type": string;
+        "User-Agent": string;
     };
     institution: InstitutionApi;
     agreement: AgreementApi;
@@ -64,19 +64,19 @@ export default class NordigenClient {
         refreshToken: string;
     }): Promise<unknown>;
     /**
-       * Factory method that creates authorization in a specific institution
-          and are responsible for the following steps:
-              * Gets institution id;
-              * Creates agreement
-              * Creates requisiton
-       * @param {Object} params
-       * @param {string} params.redirectUrl
-       * @param {string} params.institutionId
-       * @param {string} params.referenceId
-       * @param {number} [params.maxHistoricalDays]
-       * @returns Requisitions object
-      */
-    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays, }: {
+     * Factory method that creates authorization in a specific institution
+        and are responsible for the following steps:
+            * Gets institution id;
+            * Creates agreement
+            * Creates requisiton
+     * @param {Object} params
+     * @param {string} params.redirectUrl
+     * @param {string} params.institutionId
+     * @param {string} params.referenceId
+     * @param {number} [params.maxHistoricalDays]
+     * @returns Requisitions object
+    */
+    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays }: {
         redirectUrl: string;
         institutionId: string;
         referenceId: string;
