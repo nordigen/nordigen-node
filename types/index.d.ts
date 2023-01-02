@@ -5,7 +5,7 @@ export default class NordigenClient {
      * @param {string} params.secretId
      * @param {string} params.secretKey
      */
-    constructor({ secretId, secretKey, baseUrl }: {
+    constructor({ secretId, secretKey, baseUrl, }: {
         secretId: string;
         secretKey: string;
     });
@@ -14,8 +14,8 @@ export default class NordigenClient {
     secretId: string;
     headers: {
         accept: string;
-        "Content-Type": string;
-        "User-Agent": string;
+        'Content-Type': string;
+        'User-Agent': string;
     };
     institution: InstitutionApi;
     agreement: AgreementApi;
@@ -48,12 +48,12 @@ export default class NordigenClient {
         endpoint: string;
         parameters: string;
         method?: HttpMethod;
-    }): Promise<unknown>;
+    }): Promise<any>;
     /**
      * Generate new access token
      * @returns Object with token details
      */
-    generateToken(): Promise<unknown>;
+    generateToken(): Promise<any>;
     /**
      * Exchange refresh token for access token
      * @param {Object} params
@@ -62,7 +62,7 @@ export default class NordigenClient {
      */
     exchangeToken({ refreshToken }: {
         refreshToken: string;
-    }): Promise<unknown>;
+    }): Promise<any>;
     /**
      * Factory method that creates authorization in a specific institution
         and are responsible for the following steps:
@@ -73,14 +73,25 @@ export default class NordigenClient {
      * @param {string} params.redirectUrl
      * @param {string} params.institutionId
      * @param {string} params.referenceId
-     * @param {number} [params.maxHistoricalDays]
+     * @param {number} params.maxHistoricalDays
+     * @param {number} params.accessValidForDays
+     * @param {string} params.userLanguage
+     * @param {string} params.ssn
+     * @param {boolean} params.redirectImmediate
+     * @param {boolean} params.accountSelection
+     *
      * @returns Requisitions object
     */
-    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays }: {
+    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays, accessValidForDays, userLanguage, ssn, redirectImmediate, accountSelection, }: {
         redirectUrl: string;
         institutionId: string;
         referenceId: string;
-        maxHistoricalDays?: number;
+        maxHistoricalDays: number;
+        accessValidForDays: number;
+        userLanguage: string;
+        ssn: string;
+        redirectImmediate: boolean;
+        accountSelection: boolean;
     }): Promise<any>;
     #private;
 }

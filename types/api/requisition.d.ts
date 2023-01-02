@@ -16,14 +16,20 @@ export default class RequisitionsApi {
      * @param {string} [params.userLanguage] to enforce a language for all end user steps hosted
                 by Nordigen passed as a two-letter country code. Defaults to None
      * @param {string} params.reference additional layer of unique ID defined by yo
+     * @param {string} params.ssn SSN number
+     * @param {boolean} params.redirectImmediate enable redirect back to the client after account list received
+     * @param {boolean} params.accountSelection option to enable account selection view for the end user
      * @returns Requisition object
     */
-    createRequisition({ redirectUrl, institutionId, agreement, userLanguage, reference }: {
+    createRequisition({ redirectUrl, institutionId, agreement, userLanguage, reference, redirectImmediate, accountSelection, ssn, }: {
         redirectUrl: string;
         institutionId: string;
         agreement?: string;
         userLanguage?: string;
         reference: string;
+        ssn: string;
+        redirectImmediate: boolean;
+        accountSelection: boolean;
     }): any;
     /**
      * Get all requisitions@param {Object} params

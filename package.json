@@ -1,6 +1,6 @@
 {
   "name": "nordigen-node",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Nordigen official API client for Node.js",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
@@ -25,8 +25,8 @@
   "bugs": "https://github.com/nordigen/nordigen-node/issues",
   "homepage": "https://github.com/nordigen/nordigen-node",
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "node-fetch": "^3.0.0"
+    "axios": "^1.2.1",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

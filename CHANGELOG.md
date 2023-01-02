@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.0] - 2023-01-02
+ - Migrate from node-fetch to axios
+ - Add missing parameters to requisition
+
 ## [1.1.1] - 2022-11-24
 
 - Fix: add country param to premium transactions API
