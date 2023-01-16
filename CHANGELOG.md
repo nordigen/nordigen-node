@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.1] - 2023-01-16
+ - Fix requisition parameters name casing
+
+
 ## [1.2.0] - 2023-01-02
  - Migrate from node-fetch to axios
  - Add missing parameters to requisition

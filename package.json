@@ -1,6 +1,6 @@
 {
   "name": "nordigen-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Nordigen official API client for Node.js",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
