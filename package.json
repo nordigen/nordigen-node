@@ -9,7 +9,7 @@
     "dev": "nodemon index.js",
     "gen:types": "tsc"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "nordigen",
     "open banking",
