@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2] - 2023-02-16
+  - Add `.cjs` support
+  - Make `ssn`, `redirectImmediate`, `accountSelection` and  `reference` optional for requisition
+
 ## [1.2.1] - 2023-01-16
  - Fix requisition parameters name casing
 
