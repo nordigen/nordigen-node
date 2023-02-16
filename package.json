@@ -1,10 +1,10 @@
 {
   "name": "nordigen-node",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Nordigen official API client for Node.js",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",

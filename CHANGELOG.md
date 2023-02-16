@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.3] - 2023-02-16
+ - Fix path to types in `package.json`
+
 ## [1.2.2] - 2023-02-16
   - Add `.cjs` support
   - Make `ssn`, `redirectImmediate`, `accountSelection` and  `reference` optional for requisition
