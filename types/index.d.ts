@@ -82,7 +82,7 @@ export default class NordigenClient {
      *
      * @returns Requisitions object
     */
-    initSession({ redirectUrl, institutionId, referenceId, maxHistoricalDays, accessValidForDays, userLanguage, ssn, redirectImmediate, accountSelection, }: {
+    initSession({ redirectUrl, institutionId, maxHistoricalDays, accessValidForDays, userLanguage, referenceId, ssn, redirectImmediate, accountSelection, }: {
         redirectUrl: string;
         institutionId: string;
         referenceId: string;
