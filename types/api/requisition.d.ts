@@ -21,7 +21,7 @@ export default class RequisitionsApi {
      * @param {boolean} params.accountSelection option to enable account selection view for the end user
      * @returns Requisition object
     */
-    createRequisition({ redirectUrl, institutionId, agreement, userLanguage, reference, redirectImmediate, accountSelection, ssn, }: {
+    createRequisition({ redirectUrl, institutionId, agreement, userLanguage, redirectImmediate, accountSelection, reference, ssn, }: {
         redirectUrl: string;
         institutionId: string;
         agreement?: string;
