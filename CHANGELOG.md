@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.4] - 2023-04-14
+ - Fix TypeScript types
+
 ## [1.2.3] - 2023-02-16
  - Fix path to types in `package.json`
 
