@@ -53,6 +53,7 @@ export default class AccountApi {
     getPremiumTransactions({ dateFrom, dateTo, country }?: {
         dateFrom: string;
         dateTo: string;
+        country?: string;
     }): any;
     #private;
 }
