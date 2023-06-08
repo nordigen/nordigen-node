@@ -18,7 +18,7 @@
     "express-session": "^1.17.2",
     "hbs": "^4.1.2",
     "knex": "^2.1.0",
-    "nordigen-node": "^1.0.0",
+    "nordigen-node": "^1.2.4",
     "sqlite3": "^5.0.8"
   },
   "devDependencies": {
