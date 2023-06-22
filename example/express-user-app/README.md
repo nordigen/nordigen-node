@@ -12,9 +12,9 @@ Brief example of app architecture and data flow.
 
 ---
 
-This application demonstrates how to integrate Nordigen API into your back-end application and connect it with front-end using [nordigen-bank-ui library](https://github.com/nordigen/nordigen-bank-ui)
+This application demonstrates how to integrate GoCardless Bank Account Data API into your back-end application and connect it with front-end using [nordigen-bank-ui library](https://github.com/nordigen/nordigen-bank-ui)
 
-Before starting to explore example application you will need to create a new secret keys and get your `SECRET_ID` and `SECRET_KEY` from the [Nordigen's Open Banking Portal](https://ob.nordigen.com/user-secrets/).
+Before starting to explore example application you will need to create a new secret keys and get your `SECRET_ID` and `SECRET_KEY` from the [GoCardless Bank Account Data portal](https://bankaccountdata.gocardless.com/user-secrets/).
 
 ## Set-Up
 ****
@@ -53,7 +53,7 @@ npm i
 Your account data will be mapped with unique requisitionId and your accountId.
 
 ## Additional Notes
-* Access token expires after 24 hours and needs to be refreshed manually by making `POST` request to `https://ob.nordigen.com/api/v2/token/refresh/` and updating it in `users` table. After refresh token expires, user should generate a new token using following endpoint `https://ob.nordigen.com/api/v2/token/new/`.
+* Access token expires after 24 hours and needs to be refreshed manually by making `POST` request to `https://ob.gocardless.com/api/v2/token/refresh/` and updating it in `users` table. After refresh token expires, user should generate a new token using following endpoint `https://ob.gocardless.com/api/v2/token/new/`.
 
 ### Please do not use this application in Production!
 
@@ -66,4 +66,4 @@ Your account data will be mapped with unique requisitionId and your accountId.
 
 ## Have more question?
 
-For any inquiries please contact support at [support@nordigen.com](support@nordigen.com) or create an issue in repository.
+For any inquiries please contact support at [bank-account-data-support@gocardless.com](bank-account-data-support@gocardless.com) or create an issue in repository.

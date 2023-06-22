@@ -17,7 +17,7 @@ describe("Test Client", () => {
     });
 
     const institution = "REVOLUT_REVOGB21";
-    const redirectUrl = "https://nordigen.com";
+    const redirectUrl = "https://gocardless.com";
 
     it("Creates access token", async () => {
         const response = await client.generateToken();
@@ -32,7 +32,7 @@ describe("Test Client", () => {
 
     it("Check if session is initialized", async () => {
         const response = await client.initSession({
-            redirectUrl: "https://nordigen.com",
+            redirectUrl: "https://gocardless.com",
             institutionId: institution,
             referenceId: randomUUID()
         })

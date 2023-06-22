@@ -4,7 +4,7 @@ import NordigenClient from './lib/index.js';
 
 dotenv.config();
 
-// Get secretId and secretKey from ob.nordigen.com portal and pass to NordigenClient or load from .env file
+// Get secretId and secretKey from bankaccountdata.gocardless.com portal and pass to NordigenClient or load from .env file
 const client = new NordigenClient({
     secretId: process.env.SECRET_ID,
     secretKey: process.env.SECRET_KEY
@@ -32,7 +32,7 @@ const institutionId = "REVOLUT_REVOGB21";
 
 // Initialize new bank session
 const init = await client.initSession({
-    redirectUrl: "https://nordigen.com",
+    redirectUrl: "https://gocardless.com",
     institutionId: institutionId,
     referenceId: randomUUID(),
 })
