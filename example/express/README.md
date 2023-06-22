@@ -2,12 +2,12 @@
 
 ## Set-up
 ---
-You'll need to get your `SECRET_ID` and `SECRET_KEY` from the [Nordigen's Open Banking Portal](https://ob.nordigen.com/). 
+You'll need to get your `SECRET_ID` and `SECRET_KEY` from the [GoCardless Bank Account Data Portal](https://bankaccountdata.gocardless.com/user-secrets/). 
 In **app.js** file provide the token as a parameter for `NordigenClient`. 
 
 ```javascript
 // Pass secretId and secretKey to NordigenClient instance as a string or load from .env file
-// Client details can be generated from OB portal 
+// Client details can be generated from Bank Account Data portal 
 const client = new NordigenClient({
     secretId: process.env.SECRET_ID,
     secretKey: process.env.SECRET_KEY

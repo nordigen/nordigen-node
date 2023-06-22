@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.5] - 2023-06-22
+ - Change Nordigen URLs to GC
+
 ## [1.2.4] - 2023-04-14
  - Fix TypeScript types
 

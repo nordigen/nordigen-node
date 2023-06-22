@@ -1,11 +1,11 @@
 # Nordigen Node.js Library
 
 
-This is official Node client library for [Nordigen](https://nordigen.com/en).
+This is official Node client library for [GoCardless Bank Account Data](https://gocardless.com/bank-account-data/).
 
-For a full list of endpoints and arguments, see the [docs](https://nordigen.com/en/account_information_documenation/api-documention/overview/).
+For a full list of endpoints and arguments, see the [docs](https://developer.gocardless.com/bank-account-data/quick-start-guide).
 
-Before starting to use API you will need to create a new secret and get your `SECRET_ID` and `SECRET_KEY` from the [Nordigen's Open Banking Portal](https://ob.nordigen.com/user-secrets/).
+Before starting to use API you will need to create a new secret and get your `SECRET_ID` and `SECRET_KEY` from the [GoCardless Bank Account Data Portal](https://bankaccountdata.gocardless.com/user-secrets/).
 
 
 ## Requirements
@@ -31,7 +31,7 @@ Express example application can be found in `example` directory
 
 
 ```javascript
-// Get secretId and secretKey from ob.nordigen.com portal and pass to NordigenClient or load from .env file
+// Get secretId and secretKey from bankaccountdata.gocardless.com portal and pass to NordigenClient or load from .env file
 const client = new NordigenClient({
     secretId: process.env.SECRET_ID,
     secretKey: process.env.SECRET_KEY
@@ -60,7 +60,7 @@ const institutionId = "REVOLUT_REVOGB21";
 
 // Initialize new bank session
 const init = await client.initSession({
-    redirectUrl: "https://nordigen.com",
+    redirectUrl: "https://gocardless.com",
     institutionId: institutionId,
     referenceId: randomUUID()
 })
@@ -99,7 +99,7 @@ await account.getTransactions({dateFrom: "2021-12-01", dateTo: "2022-01-30"});
 
 ## Premium endpoints
 
-In order to access Premium API endpoints, please contact us at [onboarding@nordigen.com](onboarding@nordigen.com)
+In order to access Premium API endpoints, please contact us at [bank-account-data-support@gocardless.com](bank-account-data-support@gocardless.com)
 
 ```js
 // country parameter can be omitted but when used you will get more precise results
@@ -114,4 +114,4 @@ const transactions = await account.getPremiumTransactions({
 
 ## Support
 
-For any inquiries please contact support at [support@nordigen.com](support@nordigen.com) or create an issue in repository.
+For any inquiries please contact support at [bank-account-data-support@gocardless.com](bank-account-data-support@gocardless.com) or create an issue in repository.
