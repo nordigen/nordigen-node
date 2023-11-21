@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.0] - 2023-11-14
+ - Rewrite in TypeScript
+ - Generates types from the OA specification
+ - Added `countries` array with `{ id: CountryCode, name: "Country Name" }` objects (eg. `{ id: "CZ", name: "Czechia" }`)
+ - generateToken() now updates the `NordigenClient.token` property
+ - [BC break] Removed `AccountApi#getPremiumDetails()`
+ - [BC break] Restructuring of files, therefore direct imports may not work the same way
+ - [BC break] `import NordigenClient from "nordigen-node"` -> `import { NordigenClient } from "nordigen-node"`
+
 ## [1.2.5] - 2023-06-22
  - Change Nordigen URLs to GC
 
