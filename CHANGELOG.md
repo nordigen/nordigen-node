@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.2.6] - 2024-02-08
+ - Change Nordigen URLs to GC
+
 ## [1.2.5] - 2023-06-22
  - Change Nordigen URLs to GC
 
