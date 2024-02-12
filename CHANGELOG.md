@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.0] - 2023-06-22
+## [1.3.0] - 2024-02-12
  - Updated baseUrl to https://bankaccountdata.gocardless.com/api/v2
 
 ## [1.2.5] - 2023-06-22
