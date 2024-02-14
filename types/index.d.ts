@@ -5,10 +5,9 @@ export default class NordigenClient {
      * @param {string} params.secretId
      * @param {string} params.secretKey
      */
-    constructor({ secretId, secretKey, baseUrl }: {
+    constructor({ secretId, secretKey, baseUrl, }: {
         secretId: string;
         secretKey: string;
-        baseUrl?: string;
     });
     baseUrl: any;
     secretKey: string;

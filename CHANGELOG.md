@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.1] - 2024-02-14
+
+- Regenerate TypeScript types and update rollup dev dependencies
+
 ## [1.3.0] - 2024-02-12
  - Updated baseUrl to https://bankaccountdata.gocardless.com/api/v2
 
