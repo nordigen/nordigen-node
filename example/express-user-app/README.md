@@ -53,7 +53,7 @@ npm i
 Your account data will be mapped with unique requisitionId and your accountId.
 
 ## Additional Notes
-* Access token expires after 24 hours and needs to be refreshed manually by making `POST` request to `https://ob.gocardless.com/api/v2/token/refresh/` and updating it in `users` table. After refresh token expires, user should generate a new token using following endpoint `https://ob.gocardless.com/api/v2/token/new/`.
+* Access token expires after 24 hours and needs to be refreshed manually by making `POST` request to `https://bankaccountdata.gocardless.com/api/v2/token/refresh/` and updating it in `users` table. After refresh token expires, user should generate a new token using following endpoint `https://bankaccountdata.gocardless.com/api/v2/token/new/`.
 
 ### Please do not use this application in Production!
 

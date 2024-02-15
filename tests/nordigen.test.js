@@ -110,15 +110,4 @@ describe("Test Client", () => {
         expect(transactions.transactions).toBeDefined();
     }, 60000)
 
-    it("Get's account data from premium endpoints", async () => {
-
-        const account = await client.account(process.env.ACCOUNT_ID);
-
-        const details = await account.getPremiumDetails();
-        expect(details.account).toBeDefined();
-
-        const transactions = await account.getPremiumTransactions();
-        expect(transactions.transactions).toBeDefined();
-    }, 60000)
-
 })

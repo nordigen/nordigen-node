@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0] - 2024-02-15
+
+- Update docs and remove discontinued premium endpoints.
+
 ## [1.3.1] - 2024-02-14
 
 - Regenerate TypeScript types and update rollup dev dependencies
