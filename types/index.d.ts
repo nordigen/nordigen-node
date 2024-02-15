@@ -4,12 +4,14 @@ export default class NordigenClient {
      * @param {Object} params
      * @param {string} params.secretId
      * @param {string} params.secretKey
+     * @param {string} params.baseUrl
      */
     constructor({ secretId, secretKey, baseUrl, }: {
         secretId: string;
         secretKey: string;
+        baseUrl: string;
     });
-    baseUrl: any;
+    baseUrl: string;
     secretKey: string;
     secretId: string;
     headers: {

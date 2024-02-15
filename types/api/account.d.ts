@@ -20,12 +20,6 @@ export default class AccountApi {
      */
     getDetails(): any;
     /**
-     * Access premium account details
-     * @param {string} country parameter in iso format
-     * @returns Object with premium account details
-     */
-    getPremiumDetails(country?: string): any;
-    /**
      * Access account balances
      * @returns Object with account balances
      */
@@ -43,17 +37,6 @@ export default class AccountApi {
         dateTo: string;
         country: string;
     }, country?: string): any;
-    /**
-     * @param {Object} [params]
-     * @param {string} params.dateFrom
-     * @param {string} params.dateTo
-     * Access premium account transactions
-     * @returns Object with premium account transactions
-     */
-    getPremiumTransactions({ dateFrom, dateTo, country }?: {
-        dateFrom: string;
-        dateTo: string;
-    }): any;
     #private;
 }
 import NordigenClient from "../index.js";
