@@ -97,20 +97,11 @@ const transactions = await account.getTransactions();
 await account.getTransactions({dateFrom: "2021-12-01", dateTo: "2022-01-30"});
 ```
 
-## Premium endpoints
 
-In order to access Premium API endpoints, please contact us at [bank-account-data-support@gocardless.com](bank-account-data-support@gocardless.com)
+## Build and publish
 
-```js
-// country parameter can be omitted but when used you will get more precise results
-const details = await account.getPremiumDetails('LV');
-// date and country parameters are optional
-const transactions = await account.getPremiumTransactions({
-  dateFrom: '2021-12-01',
-  dateTo: '2022-01-30',
-  country: 'LV',
-});
-```
+1. Run `npm run build`
+2. Publish library `npm publish`
 
 ## Support
 
