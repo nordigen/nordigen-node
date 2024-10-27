@@ -14,7 +14,7 @@ export default class InstitutionApi {
      * @returns institution data array
      */
     getInstitutions({ country }: {
-        country: string;
+        country?: string;
     }): any;
     /***
      * Get single institution by id
