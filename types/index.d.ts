@@ -9,7 +9,7 @@ export default class NordigenClient {
     constructor({ secretId, secretKey, baseUrl, }: {
         secretId: string;
         secretKey: string;
-        baseUrl: string;
+        baseUrl?: string;
     });
     baseUrl: string;
     secretKey: string;
@@ -87,13 +87,13 @@ export default class NordigenClient {
     initSession({ redirectUrl, institutionId, maxHistoricalDays, accessValidForDays, userLanguage, referenceId, ssn, redirectImmediate, accountSelection, }: {
         redirectUrl: string;
         institutionId: string;
-        referenceId: string;
-        maxHistoricalDays: number;
-        accessValidForDays: number;
-        userLanguage: string;
-        ssn: string;
-        redirectImmediate: boolean;
-        accountSelection: boolean;
+        referenceId?: string;
+        maxHistoricalDays?: number;
+        accessValidForDays?: number;
+        userLanguage?: string;
+        ssn?: string;
+        redirectImmediate?: boolean;
+        accountSelection?: boolean;
     }): Promise<any>;
     #private;
 }
