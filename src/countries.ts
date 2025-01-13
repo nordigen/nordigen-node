@@ -1,4 +1,4 @@
-import { CountryEnum } from "./generated.js";
+import { CountryEnum } from "./types/enums.js";
 import type { Country } from "./types/client.js";
 
 export const countries: Country[] = [

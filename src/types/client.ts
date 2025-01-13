@@ -1,6 +1,6 @@
 import type { HttpMethod } from "../HttpMethod.js";
 import type { NordigenClient } from "../NordigenClient.js";
-import type { CountryEnum } from "../generated.js";
+import type { CountryEnum } from "./enums.js";
 import type { AgreementCreateParams } from "./agreement.js";
 import type { RequisitionCreateOptions } from "./requisition.js";
 
