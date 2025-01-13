@@ -1,1 +1,0 @@
-{"version":3,"file":"account.d.ts","sourceRoot":"","sources":["../../lib/api/account.js"],"names":[],"mappings":"AAEA;IAKI;;;;;OAKG;IACH;QAHkC,MAAM,EAA7B,cAAc;QACC,SAAS,EAAxB,MAAM;OAKhB;IAaD;;;OAGG;IACH,mBAIC;IAED;;;OAGG;IACH,kBAEC;IAED;;;OAGG;IACH,mBAEC;IAED;;;;;;;OAOG;IACH;QAN0B,QAAQ,EAAvB,MAAM;QACS,MAAM,EAArB,MAAM;QACS,OAAO,EAAtB,MAAM;8BAWhB;;CACJ"}

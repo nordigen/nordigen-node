@@ -6,3 +6,5 @@ tests/
 .nvmrc
 babel.config.json
 main.js
+!src
+!tsconfig.json
