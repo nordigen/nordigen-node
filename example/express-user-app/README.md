@@ -1,4 +1,6 @@
 # Node application integration with Nordigen API using `Express.js`
+### ⚠️ Notice
+Please be advised that the Bank Account Data libraries are no longer actively updated or maintained. While these libraries may still function, GoCardless will not provide further updates, bug fixes, or support for them.
 
 ## App architecture
 
