@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.1] - 2025-04-04
+
+- Add maintenance notice to README
+
 ## [1.4.0] - 2024-02-15
 
 - Update docs and remove discontinued premium endpoints.
